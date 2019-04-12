@@ -9,12 +9,15 @@
 /* Begin PBXBuildFile section */
 		9DAD31FF1685A65670E43227 /* Pods_RedditTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E37251E4CF89BA0389643939 /* Pods_RedditTestUITests.framework */; };
 		CD7B1A4F2260063D0011BC2C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A4E2260063D0011BC2C /* AppDelegate.swift */; };
-		CD7B1A512260063D0011BC2C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A502260063D0011BC2C /* ViewController.swift */; };
 		CD7B1A542260063D0011BC2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7B1A522260063D0011BC2C /* Main.storyboard */; };
 		CD7B1A56226006400011BC2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD7B1A55226006400011BC2C /* Assets.xcassets */; };
 		CD7B1A59226006400011BC2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD7B1A57226006400011BC2C /* LaunchScreen.storyboard */; };
 		CD7B1A64226006400011BC2C /* RedditTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A63226006400011BC2C /* RedditTestTests.swift */; };
 		CD7B1A6F226006400011BC2C /* RedditTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A6E226006400011BC2C /* RedditTestUITests.swift */; };
+		CD7B1A7E226008670011BC2C /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A7D226008670011BC2C /* NetworkLayer.swift */; };
+		CD7B1A81226018610011BC2C /* TopEntries.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A80226018610011BC2C /* TopEntries.swift */; };
+		CD7B1A8322601E3C0011BC2C /* TopEntriesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A8222601E3C0011BC2C /* TopEntriesTableViewController.swift */; };
+		CD7B1A86226020560011BC2C /* TopEntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD7B1A85226020560011BC2C /* TopEntriesViewModel.swift */; };
 		D7F5791C45702AFC188492BF /* Pods_RedditTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DEEA1B0BF6727DF5B289721 /* Pods_RedditTestTests.framework */; };
 		F24A03F8EECFFFE149C1DB86 /* Pods_RedditTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE2D441F3655871E11CB8F6B /* Pods_RedditTest.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +48,6 @@
 		BE2D441F3655871E11CB8F6B /* Pods_RedditTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7B1A4B2260063D0011BC2C /* RedditTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7B1A4E2260063D0011BC2C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CD7B1A502260063D0011BC2C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CD7B1A532260063D0011BC2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CD7B1A55226006400011BC2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD7B1A58226006400011BC2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +58,10 @@
 		CD7B1A6A226006400011BC2C /* RedditTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD7B1A6E226006400011BC2C /* RedditTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditTestUITests.swift; sourceTree = "<group>"; };
 		CD7B1A70226006400011BC2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD7B1A7D226008670011BC2C /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		CD7B1A80226018610011BC2C /* TopEntries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntries.swift; sourceTree = "<group>"; };
+		CD7B1A8222601E3C0011BC2C /* TopEntriesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesTableViewController.swift; sourceTree = "<group>"; };
+		CD7B1A85226020560011BC2C /* TopEntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesViewModel.swift; sourceTree = "<group>"; };
 		E37251E4CF89BA0389643939 /* Pods_RedditTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedditTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E408595D308009F86D2416DC /* Pods-RedditTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedditTestUITests/Pods-RedditTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		FA5356048986B1F1455EF92C /* Pods-RedditTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedditTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-RedditTest/Pods-RedditTest.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,8 +133,11 @@
 		CD7B1A4D2260063D0011BC2C /* RedditTest */ = {
 			isa = PBXGroup;
 			children = (
+				CD7B1A84226020420011BC2C /* ViewModel */,
+				CD7B1A7F22600CF20011BC2C /* DataModels */,
+				CD7B1A7C226008500011BC2C /* NetworkLayer */,
 				CD7B1A4E2260063D0011BC2C /* AppDelegate.swift */,
-				CD7B1A502260063D0011BC2C /* ViewController.swift */,
+				CD7B1A8222601E3C0011BC2C /* TopEntriesTableViewController.swift */,
 				CD7B1A522260063D0011BC2C /* Main.storyboard */,
 				CD7B1A55226006400011BC2C /* Assets.xcassets */,
 				CD7B1A57226006400011BC2C /* LaunchScreen.storyboard */,
@@ -153,6 +162,30 @@
 				CD7B1A70226006400011BC2C /* Info.plist */,
 			);
 			path = RedditTestUITests;
+			sourceTree = "<group>";
+		};
+		CD7B1A7C226008500011BC2C /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				CD7B1A7D226008670011BC2C /* NetworkLayer.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		CD7B1A7F22600CF20011BC2C /* DataModels */ = {
+			isa = PBXGroup;
+			children = (
+				CD7B1A80226018610011BC2C /* TopEntries.swift */,
+			);
+			path = DataModels;
+			sourceTree = "<group>";
+		};
+		CD7B1A84226020420011BC2C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CD7B1A85226020560011BC2C /* TopEntriesViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		CF2052227B6392128E5F502E /* Frameworks */ = {
@@ -356,7 +389,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD7B1A512260063D0011BC2C /* ViewController.swift in Sources */,
+				CD7B1A86226020560011BC2C /* TopEntriesViewModel.swift in Sources */,
+				CD7B1A8322601E3C0011BC2C /* TopEntriesTableViewController.swift in Sources */,
+				CD7B1A81226018610011BC2C /* TopEntries.swift in Sources */,
+				CD7B1A7E226008670011BC2C /* NetworkLayer.swift in Sources */,
 				CD7B1A4F2260063D0011BC2C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,7 +572,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XQEL482C4;
 				INFOPLIST_FILE = RedditTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilmen.RedditTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -552,7 +591,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XQEL482C4;
 				INFOPLIST_FILE = RedditTest/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilmen.RedditTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -569,7 +611,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XQEL482C4;
 				INFOPLIST_FILE = RedditTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilmen.RedditTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -587,7 +633,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XQEL482C4;
 				INFOPLIST_FILE = RedditTestTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilmen.RedditTestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -604,7 +654,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XQEL482C4;
 				INFOPLIST_FILE = RedditTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilmen.RedditTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -621,7 +675,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XQEL482C4;
 				INFOPLIST_FILE = RedditTestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pilmen.RedditTestUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
