@@ -7,6 +7,9 @@ target 'RedditTest' do
 
   # Pods for RedditTest
 
+  pod 'SDWebImage'
+  pod 'SVProgressHUD'
+
   target 'RedditTestTests' do
     inherit! :search_paths
     # Pods for testing

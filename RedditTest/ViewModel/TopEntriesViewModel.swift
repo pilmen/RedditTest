@@ -11,7 +11,7 @@ import Foundation
 class TopEntriesViewModel {
     var topEntriesList: [TopEntriesDataChildren]?
     
-    func getListOfTopEntries(completion: (Result<TopEntries, Error>) -> Void) {
+    func getListOfTopEntries(completion: @escaping (Result<TopEntries, Error>) -> Void) {
         APIRequest.request(HTTPRequest.getListOfTopItems, decodeTo: TopEntries.self) {[unowned self] (result) in
             switch result {
             case .success(let items):
@@ -19,7 +19,14 @@ class TopEntriesViewModel {
             case .failure(let error):
                 print(error)
             }
+            DispatchQueue.main.async {
+                completion(result)
+            }
         }
+    }
+    
+    func entryForIndexPath(indexPath: IndexPath) -> TopEntriesDataChildren? {
+        return topEntriesList?[indexPath.row]
     }
     
     var numberOfItems: Int {

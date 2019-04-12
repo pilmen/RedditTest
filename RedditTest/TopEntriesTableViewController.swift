@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class TopEntriesTableViewController: UITableViewController {
 
@@ -15,14 +16,20 @@ class TopEntriesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        topEntriesViewModel.getListOfTopEntries { result in
-            self.tableView.reloadData()
-        }
+        self.loadEntries()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    func loadEntries()  {
+        SVProgressHUD.show()
+        topEntriesViewModel.getListOfTopEntries { result in
+            SVProgressHUD.dismiss()
+            self.tableView.reloadData()
+        }
     }
 
     // MARK: - Table view data source
@@ -33,8 +40,11 @@ class TopEntriesTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EntryTableViewCell
+        guard let entry = topEntriesViewModel.entryForIndexPath(indexPath: indexPath) else {
+            return UITableViewCell()
+        }
+        cell.configure(withEntry: entry)
         return cell
     }
 
