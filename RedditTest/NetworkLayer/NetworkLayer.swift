@@ -71,3 +71,22 @@ public enum APIRequest {
         task.resume()
     }
 }
+
+public typealias Parameters = [String: Any]
+
+public protocol ParameterEncoding {
+    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest
+}
+
+public struct URLParameterEncoding: ParameterEncoding {
+    public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try urlRequest.asURLRequest()
+        var urlComponents = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)
+        if let parameters = parameters, !parameters.isEmpty {
+            let urlParameters = parameters.map{URLQueryItem(name: $0, value: "\($1)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed))}
+            urlComponents?.queryItems?.append(contentsOf: urlParameters)
+        }
+        request.url = urlComponents?.url
+        return request
+    }
+}

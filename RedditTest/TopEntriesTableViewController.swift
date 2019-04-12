@@ -41,9 +41,7 @@ class TopEntriesTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EntryTableViewCell
-        guard let entry = topEntriesViewModel.entryForIndexPath(indexPath: indexPath) else {
-            return UITableViewCell()
-        }
+        let entry = topEntriesViewModel.entryForIndexPath(indexPath: indexPath)
         cell.configure(withEntry: entry)
         return cell
     }

@@ -11,6 +11,8 @@ import Foundation
 struct TopEntries: Codable {
     let kind: String
     let data: TopEntriesData
+    let after: String?
+    let before: String?
 }
 
 struct TopEntriesData: Codable {
