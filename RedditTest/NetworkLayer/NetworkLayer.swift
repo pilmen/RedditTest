@@ -28,7 +28,7 @@ public protocol URLRequestConvertible {
 public enum HTTPRequest: URLRequestConvertible {
     public static let baseURLString = "https://www.reddit.com"
     
-    case getListOfTopItems
+    case getListOfTopItems(Parameters?)
     
     var method: HTTPMethod {
         switch self {
@@ -50,6 +50,10 @@ public enum HTTPRequest: URLRequestConvertible {
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
+        switch self {
+        case .getListOfTopItems(let parameters):
+            urlRequest = try URLParameterEncoding().encode(urlRequest, with: parameters)
+        }
         return urlRequest
     }
     
@@ -75,18 +79,17 @@ public enum APIRequest {
 public typealias Parameters = [String: Any]
 
 public protocol ParameterEncoding {
-    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest
+    func encode(_ urlRequest: URLRequest, with parameters: Parameters?) throws -> URLRequest
 }
 
 public struct URLParameterEncoding: ParameterEncoding {
-    public func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
-        var request = try urlRequest.asURLRequest()
-        var urlComponents = URLComponents(url: request.url!, resolvingAgainstBaseURL: false)
-        if let parameters = parameters, !parameters.isEmpty {
-            let urlParameters = parameters.map{URLQueryItem(name: $0, value: "\($1)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed))}
-            urlComponents?.queryItems?.append(contentsOf: urlParameters)
+    public func encode(_ urlRequest: URLRequest, with parameters: Parameters?) throws -> URLRequest {
+        var request = urlRequest
+        if let url = request.url, let parameters = parameters, parameters.count > 0 {
+            var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false)
+            urlComponents?.queryItems = parameters.map{URLQueryItem(name: $0, value: "\($1)".addingPercentEncoding(withAllowedCharacters: .urlHostAllowed))}
+            request.url = urlComponents?.url
         }
-        request.url = urlComponents?.url
         return request
     }
 }

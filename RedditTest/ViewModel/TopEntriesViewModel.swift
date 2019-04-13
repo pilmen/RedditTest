@@ -11,11 +11,15 @@ import Foundation
 class TopEntriesViewModel {
     private var topEntries: TopEntries?
     var topEntriesList: [TopEntriesDataChildren] = []
-    private var loading: Bool = false
+    var loading: Bool = false
     
     func getListOfTopEntries(completion: @escaping (Result<TopEntries, Error>) -> Void) {
         loading = true
-        APIRequest.request(HTTPRequest.getListOfTopItems, decodeTo: TopEntries.self) {[unowned self] (result) in
+        var parameters: Parameters = [:]
+        if let after = topEntries?.data.after {
+            parameters["after"] = after
+        }
+        APIRequest.request(HTTPRequest.getListOfTopItems(parameters), decodeTo: TopEntries.self) {[unowned self] (result) in
             self.loading = false
             switch result {
             case .success(let itemsContainer):
@@ -33,6 +37,10 @@ class TopEntriesViewModel {
     func clear() {
         topEntries = nil
         topEntriesList.removeAll()
+    }
+    
+    func hasAfter() -> Bool {
+        return topEntries?.data.after == nil ? false:true
     }
     
     func entryForIndexPath(indexPath: IndexPath) -> TopEntriesDataChildren {

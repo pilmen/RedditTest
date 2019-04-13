@@ -11,14 +11,14 @@ import Foundation
 struct TopEntries: Codable {
     let kind: String
     let data: TopEntriesData
-    let after: String?
-    let before: String?
 }
 
 struct TopEntriesData: Codable {
     let modhash: String
     let dist: Int
     let children: [TopEntriesDataChildren]
+    let after: String?
+    let before: String?
 }
 
 struct TopEntriesDataChildren: Codable {

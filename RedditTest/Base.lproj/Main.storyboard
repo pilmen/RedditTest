@@ -13,10 +13,32 @@
         <scene sceneID="MjM-u7-Zda">
             <objects>
                 <tableViewController id="skL-g3-mqa" customClass="TopEntriesTableViewController" customModule="RedditTest" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CPU-Yh-a5n">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CPU-Yh-a5n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="2fi-lh-3cY">
+                            <rect key="frame" x="0.0" y="148" width="414" height="86"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUa-hu-Wx7">
+                                    <rect key="frame" x="176.5" y="32.5" width="61" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="xOw-zm-b3b">
+                                    <rect key="frame" x="148.5" y="33" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="UUa-hu-Wx7" firstAttribute="centerX" secondItem="2fi-lh-3cY" secondAttribute="centerX" id="N0x-nw-lSJ"/>
+                                <constraint firstItem="xOw-zm-b3b" firstAttribute="centerY" secondItem="UUa-hu-Wx7" secondAttribute="centerY" id="RPJ-wf-sjr"/>
+                                <constraint firstItem="UUa-hu-Wx7" firstAttribute="centerY" secondItem="2fi-lh-3cY" secondAttribute="centerY" id="c3l-Uk-JnK"/>
+                                <constraint firstItem="UUa-hu-Wx7" firstAttribute="leading" secondItem="xOw-zm-b3b" secondAttribute="trailing" constant="8" id="feQ-69-sLu"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="120" id="zwd-Bi-akd" customClass="EntryTableViewCell" customModule="RedditTest" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="120"/>

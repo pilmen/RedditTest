@@ -45,6 +45,15 @@ class TopEntriesTableViewController: UITableViewController {
         cell.configure(withEntry: entry)
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 5 > topEntriesViewModel.numberOfItems && topEntriesViewModel.hasAfter() &&
+            !topEntriesViewModel.loading {
+            topEntriesViewModel.getListOfTopEntries { result in
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
